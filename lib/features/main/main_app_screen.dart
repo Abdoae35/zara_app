@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/home/home_page.dart';
 
 class MainAppScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
   int currentIndex = 0;
 
   List<Widget> screens = [
-    Center(child: Text('Home')),
+    HomePage(),
     Center(child: Text('Notification')),
     Center(child: Text('Orders')),
     Center(child: Text('Profile')),
@@ -22,6 +23,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       body: screens[currentIndex],
       bottomNavigationBar: Container(
         padding: const EdgeInsets.only(top: 10),
