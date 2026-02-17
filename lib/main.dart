@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zara_app/features/home/home_page.dart';
+import 'package:zara_app/features/main/main_app_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,7 +12,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello world'))),
+      debugShowCheckedModeBanner: false,
+      home: MainAppScreen(),
     );
   }
 }

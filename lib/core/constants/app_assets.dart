@@ -1,6 +1,7 @@
 class AppAssets {
   static const String zaraLogo = "assets/icons/ZARA.svg";
   static const String add = "assets/icons/add.svg";
+  static const String homeIconsss = "assets/icons/homeIcon.svg";
   static const String arrowDown = "assets/icons/arrowDown.svg";
   static const String arrowleft = "assets/icons/arrowleft2.svg";
   static const String arrowright = "assets/icons/arrowright2.svg";
@@ -11,6 +12,7 @@ class AppAssets {
   static const String favIcon = "assets/icons/fav-icon.svg";
   static const String heart = "assets/icons/heart.svg";
   static const String home = "assets/icons/home.svg";
+  static const String bag = "assets/icons/bag2.svg";
   static const String masterCard = "assets/icons/masterCard.svg";
   static const String notification = "assets/icons/notificationbing.svg";
   static const String order = "assets/icons/order.svg";
@@ -20,18 +22,23 @@ class AppAssets {
   static const String successOrdaccessorieser = "assets/icons/successOrder.svg";
   static const String accessories = "assets/images/accessories.svg";
   static const String bags = "assets/images/bags.svg";
-  static const String FleecePulloverSkateHoodie = "assets/images/accessoFleecePulloverSkate Hoodieries.png";
+  static const String FleecePulloverSkateHoodie =
+      "assets/images/accessoFleecePulloverSkate Hoodieries.png";
   static const String FleeceSkateHoodie = "assets/images/FleeceSkateHoodie.png";
   static const String hoodies = "assets/images/hoodies.svg";
-  static const String MaxCirroMensSlides = "assets/images/MaxCirroMen'sSlides.png";
-  static const String MensFleecePulloverHoodie = "assets/images/Men'sFleecePullover Hoodie.png";
-  static const String MensHarringtonJacket = "assets/images/Men'sHarringtonJacket.pngg";
-  static const String MensIceDyePulloverHoodie = "assets/images/Men'sIce-DyePullover Hoodie.png";
-  static const String MensSkateTShirt = "assets/images/Men'sSkateT-Shirt.png";
-  static const String MensTShirt = "assets/images/Men'sT-Shirt.png";
+  static const String MaxCirroMensSlides =
+      "assets/images/MaxCirroMen'sSlides.png";
+  static const String MensFleecePulloverHoodie =
+      "assets/images/MensFleecePullover Hoodie.png";
+  static const String MensHarringtonJacket =
+      "assets/images/MensHarringtonJacket.pngg";
+  static const String MensIceDyePulloverHoodie =
+      "assets/images/MensIce-DyePullover Hoodie.png";
+  static const String MensSkateTShirt = "assets/images/MensSkateT-Shirt.png";
+  static const String MensTShirt = "assets/images/MensT-Shirt.png";
   static const String NikeFuelPack = "assets/images/NikeFuelPack.png";
   static const String NikeShowXRush = "assets/images/NikeShowXRush.png";
   static const String shoes = "assets/images/shoes.svg";
   static const String shorts = "assets/images/shorts.svg";
-  
+  static const String homeIcon = "assets/icons/homeIcon.svg";
 }
