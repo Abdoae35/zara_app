@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:zara_app/core/constants/app_assets.dart';
-import 'package:zara_app/core/styles/app_colors.dart';
 
 void main() {
   runApp(const MainApp());
