@@ -25,7 +25,7 @@ class searchForm extends StatelessWidget {
           ),
           prefixIcon: Padding(
             padding: const EdgeInsets.only(left: 19),
-            child: SvgPicture.asset(AppAssets.search),
+            child: SvgPicture.asset(AppAssets.search, height: 16, width: 16),
           ),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
           enabledBorder: OutlineInputBorder(

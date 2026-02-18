@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/home/home_page.dart';
+import 'package:zara_app/features/home/pages/home_page.dart';
 
 class MainAppScreen extends StatefulWidget {
   @override

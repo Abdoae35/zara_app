@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/category/page/category_screen.dart';
 import 'package:zara_app/features/home/widgets/category_item.dart';
 import 'package:zara_app/features/home/widgets/custom_title.dart';
 import 'package:zara_app/features/home/widgets/label_of_list_view.dart';
@@ -32,10 +33,10 @@ class HomePage extends StatelessWidget {
         title: GestureDetector(
           onTap: () {},
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             decoration: BoxDecoration(
-              color: AppColors.backgroundColor,
-              borderRadius: BorderRadius.circular(30),
+              color: AppColors.inputBackgroundColor,
+              borderRadius: BorderRadius.circular(23),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -86,14 +87,23 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   customTitle(label: 'Categories'),
-                  seeAllText(),
+                  seeAllText(
+                    onPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CategoryScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
 
             SizedBox(height: 16.5),
 
-            // Categories horizontal scrollable list - FIXED
+            // Categories
             SizedBox(
               height: 100,
               child: ListView(
