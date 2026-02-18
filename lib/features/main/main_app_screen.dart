@@ -35,8 +35,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          selectedItemColor: AppColors.primaryColor,
-          unselectedItemColor: Colors.grey,
+
           onTap: (index) {
             setState(() {
               currentIndex = index;
@@ -46,6 +45,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: SvgPicture.asset(
+               
                 AppAssets.home,
                 colorFilter: const ColorFilter.mode(
                   Colors.grey,
