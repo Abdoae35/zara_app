@@ -23,7 +23,7 @@ class AppAssets {
   static const String successOrdaccessorieser = "assets/icons/successOrder.svg";
 
   static const String FleecePulloverSkateHoodie =
-      "assets/images/accessoFleecePulloverSkate Hoodieries.png";
+      "assets/images/FleecePulloverSkate Hoodie.png";
   static const String FleeceSkateHoodie = "assets/images/FleeceSkateHoodie.png";
 
   static const String MaxCirroMensSlides =
@@ -31,9 +31,9 @@ class AppAssets {
   static const String MensFleecePulloverHoodie =
       "assets/images/MensFleecePullover Hoodie.png";
   static const String MensHarringtonJacket =
-      "assets/images/MensHarringtonJacket.pngg";
+      "assets/images/MensHarringtonJacket.png";
   static const String MensIceDyePulloverHoodie =
-      "assets/images/MensIce-DyePullover Hoodie.png";
+      "assets/images/MenIce-DyePullover Hoodie.png";
   static const String MensSkateTShirt = "assets/images/MensSkateT-Shirt.png";
   static const String MensTShirt = "assets/images/MensT-Shirt.png";
   static const String NikeFuelPack = "assets/images/NikeFuelPack.png";
@@ -44,6 +44,6 @@ class AppAssets {
   static const String shortss = "assets/images/Shorts.png";
   static const String shoes = "assets/images/shoes.png";
   static const String bag = "assets/images/bag.png";
- 
+
   static const String accessories = "assets/images/accessories.png";
 }

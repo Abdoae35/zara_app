@@ -8,6 +8,8 @@ import 'package:zara_app/features/category/widgets/category_icon.dart';
 import 'package:zara_app/features/category/widgets/category_item.dart';
 import 'package:zara_app/features/home/widgets/custom_title.dart';
 
+import 'package:zara_app/features/hoodies/page/hoodies_page.dart';
+
 class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,21 @@ class CategoryScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: .start,
                     children: [
-                      categoryItem(path: AppAssets.hoodies, label: 'Hoodies'),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HoodiesPage(),
+                            ),
+                          );
+                        },
+
+                        child: categoryItem(
+                          path: AppAssets.hoodies,
+                          label: 'Hoodies',
+                        ),
+                      ),
 
                       categoryItem(
                         path: AppAssets.accessories,
