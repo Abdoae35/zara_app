@@ -13,6 +13,7 @@ class AppAssets {
   static const String favIcon = "assets/icons/fav-icon.svg";
   static const String heart = "assets/icons/heart.svg";
   static const String home = "assets/icons/home.svg";
+  static const String filter = "assets/icons/filter.svg";
 
   static const String masterCard = "assets/icons/masterCard.svg";
   static const String notification = "assets/icons/notificationbing.svg";
