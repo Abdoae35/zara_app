@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/home/pages/home_page.dart';
 import 'package:zara_app/features/main/main_app_screen.dart';
 
 void main() {

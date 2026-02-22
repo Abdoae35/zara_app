@@ -8,12 +8,12 @@ class CategoryItem extends StatelessWidget {
   final bool isSelected;
 
   const CategoryItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.imagePath,
     this.isSelected = false,
     Action,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

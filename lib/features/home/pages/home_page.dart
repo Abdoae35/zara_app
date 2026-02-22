@@ -13,6 +13,8 @@ import 'package:zara_app/features/home/widgets/search_form.dart';
 import 'package:zara_app/features/home/widgets/see_all_text.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

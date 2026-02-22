@@ -11,6 +11,8 @@ import 'package:zara_app/features/home/widgets/custom_title.dart';
 import 'package:zara_app/features/hoodies/page/hoodies_page.dart';
 
 class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
