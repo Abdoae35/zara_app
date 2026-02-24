@@ -47,4 +47,5 @@ class AppAssets {
   static const String bag = "assets/images/bag.png";
 
   static const String accessories = "assets/images/accessories.png";
+  static const String x = "assets/icons/x.svg";
 }
