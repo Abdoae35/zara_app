@@ -82,10 +82,7 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   pushTo(context, SearchFilter());
                 },
-                child: Hero(
-                  tag: 'searchTag',
-                  child: searchForm(),
-                ),
+                child: Hero(tag: 'searchTag', child: searchForm()),
               ),
             ),
 
