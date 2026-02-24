@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zara_app/core/styles/app_colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,7 +7,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16),
             child: CircleAvatar(
               radius: 22,
-              backgroundColor: Color(0xFF7B5CF5),
+              backgroundColor: AppColors.primaryColor,
               child: const Icon(
                 Icons.shopping_bag_outlined,
                 color: Colors.white,

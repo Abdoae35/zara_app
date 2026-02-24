@@ -6,13 +6,9 @@ import 'package:zara_app/core/styles/app_colors.dart';
 
 class searchForm extends StatelessWidget {
   final bool enable;
-  final Widget? suffixIcon; 
+  final Widget? suffixIcon;
 
-  const searchForm({
-    super.key,
-    this.enable = false,
-    this.suffixIcon,
-  }); 
+  const searchForm({super.key, this.enable = false, this.suffixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +33,17 @@ class searchForm extends StatelessWidget {
               ),
             ),
             prefixIcon: Padding(
-              padding: const EdgeInsets.only(left: 19),
-              child: SvgPicture.asset(AppAssets.search, height: 16, width: 16),
+              padding: const EdgeInsets.only(left: 20),
+              child: Padding(
+                padding: const EdgeInsets.all(2),
+                child: SvgPicture.asset(
+                  AppAssets.search,
+                  height: 16,
+                  width: 16,
+                ),
+              ),
             ),
-            suffixIcon: suffixIcon, 
+            suffixIcon: suffixIcon,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(50),
