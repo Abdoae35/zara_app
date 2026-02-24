@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
 
 class ProductPage extends StatefulWidget {
@@ -27,9 +30,9 @@ class _ProductPageState extends State<ProductPage> {
               padding: const EdgeInsets.all(24.0),
               child: Row(
                 children: [
-                  containricons(icon: Icons.chevron_left),
+                  backLeading(),
                   SizedBox(width: 262),
-                  containricons(icon: Icons.favorite_border),
+                  containricons(iconPath: AppAssets.heart),
                 ],
               ),
             ),
