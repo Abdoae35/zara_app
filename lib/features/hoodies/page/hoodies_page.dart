@@ -6,6 +6,8 @@ import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/home/widgets/card_view.dart';
 
 class HoodiesPage extends StatelessWidget {
+  const HoodiesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final int cardCount = 6;

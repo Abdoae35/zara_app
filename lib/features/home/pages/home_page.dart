@@ -14,6 +14,8 @@ import 'package:zara_app/features/home/widgets/see_all_text.dart';
 import 'package:zara_app/features/search&filter/pages/search_filter.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
