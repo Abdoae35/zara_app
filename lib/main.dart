@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/home/pages/home_page.dart';
@@ -14,10 +16,20 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        appBarTheme: AppBarTheme(surfaceTintColor: Colors.transparent),
+        appBarTheme: AppBarTheme(
+          surfaceTintColor: Colors.transparent,
+          backgroundColor: AppColors.backgroundColor,
+        ),
         scaffoldBackgroundColor: AppColors.backgroundColor,
       ),
       debugShowCheckedModeBanner: false,
+      builder: (context, child) {
+        return SafeArea(
+          top: false,
+          bottom: Platform.isAndroid,
+          child: child ?? SizedBox.shrink(),
+        );
+      },
       home: MainAppScreen(),
     );
   }

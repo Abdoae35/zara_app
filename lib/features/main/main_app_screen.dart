@@ -29,6 +29,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
         padding: const EdgeInsets.only(top: 10),
         decoration: BoxDecoration(color: AppColors.backgroundColor),
         child: BottomNavigationBar(
+        
           currentIndex: currentIndex,
           backgroundColor: Colors.transparent,
           elevation: 0,
