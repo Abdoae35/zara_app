@@ -15,6 +15,7 @@ class SearchFilter extends StatefulWidget {
 }
 
 class _SearchFilterState extends State<SearchFilter> {
+  final int cardCount = 6;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,7 +115,7 @@ class _SearchFilterState extends State<SearchFilter> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 22),
                   child: Text(
-                    '53 Results Found',
+                    '$cardCount Results Found',
                     style: TextStyle(
                       fontFamily: AppFonts.circularStd,
                       fontSize: 16,
@@ -124,7 +125,7 @@ class _SearchFilterState extends State<SearchFilter> {
                 ),
 
                 girdViewDisplay(
-                  cardCount: 4,
+                  cardCount: cardCount,
                   cardList: [
                     // Card 1
                     cardView(
