@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/main/main_app_screen.dart';
-import 'package:zara_app/features/product/view/product_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor),
       debugShowCheckedModeBanner: false,
-      home: ProductPage(),
+      home: MainAppScreen(),
     );
   }
 }

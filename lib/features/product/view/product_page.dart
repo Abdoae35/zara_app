@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
+import 'package:zara_app/features/product/widget/infocontainer.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -34,9 +35,10 @@ class _ProductPageState extends State<ProductPage> {
                 ),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: const [
                   Text("\$148", style: TextStyle(color: Colors.white)),
+                  SizedBox(width: 200),
                   Text("Add to Bag", style: TextStyle(color: Colors.white)),
                 ],
               ),
@@ -60,7 +62,6 @@ class _ProductPageState extends State<ProductPage> {
               ),
             ),
 
-            
             SizedBox(
               height: 248,
               child: ListView.builder(
@@ -75,24 +76,21 @@ class _ProductPageState extends State<ProductPage> {
               ),
             ),
 
-           
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text("Men's Harrington Jacket"),
+                  Row(children: [Text("Men's Harrington Jacket")]),
                   SizedBox(height: 15),
-                  Text("\$148"),
+                  Row(children: [Text("\$148")]),
                 ],
               ),
             ),
 
             const SizedBox(height: 9),
 
-            
-            _infoContainer(
-              child: Row(
+            InfoContainer(context: context, child: Row(
                 children: const [
                   SizedBox(width: 16),
                   Text("Size"),
@@ -102,13 +100,11 @@ class _ProductPageState extends State<ProductPage> {
                   Icon(Icons.keyboard_arrow_down),
                   SizedBox(width: 16),
                 ],
-              ),
-            ),
+              )),
 
             const SizedBox(height: 12),
 
-            _infoContainer(
-              child: Row(
+            InfoContainer(context: context, child: Row(
                 children: [
                   const SizedBox(width: 16),
                   const Text("Color"),
@@ -125,13 +121,11 @@ class _ProductPageState extends State<ProductPage> {
                   const Icon(Icons.keyboard_arrow_down),
                   const SizedBox(width: 16),
                 ],
-              ),
-            ),
+              )),
 
             const SizedBox(height: 12),
 
-            _infoContainer(
-              child: Row(
+            InfoContainer(context: context, child: Row(
                 children: [
                   const SizedBox(width: 16),
                   const Text("Quantity"),
@@ -143,8 +137,7 @@ class _ProductPageState extends State<ProductPage> {
                   _circleBtn(Icons.remove),
                   const SizedBox(width: 16),
                 ],
-              ),
-            ),
+              )),
 
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 26, 24, 75),
@@ -205,21 +198,6 @@ class _ProductPageState extends State<ProductPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Icon(icon, color: AppColors.inputBackgroundColor),
-    );
-  }
-
-  Widget _infoContainer({required Widget child}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Container(
-        width: 342,
-        height: 56,
-        decoration: BoxDecoration(
-          color: AppColors.backgroundBlur,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: child,
-      ),
     );
   }
 }
