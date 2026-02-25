@@ -21,33 +21,53 @@ class filter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: backGroundColor,
-        borderRadius: BorderRadius.circular(19),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            SvgPicture.asset(prefixIcon ?? '', height: 25),
-            SizedBox(width: 4),
-            Text(
-              label,
-              style: TextStyle(
-                color: textColor,
-                fontFamily: AppFonts.circularStd,
-                fontSize: 16,
+    return GestureDetector(
+      onTap: () {
+        showModalBottomSheet(
+          backgroundColor: AppColors.backgroundBlur,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+          ),
+          context: context,
+          builder: (context) {
+            return SizedBox(
+              width: double.infinity,
+              child: Column(children: [Text('onSale')]),
+            );
+          },
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: backGroundColor,
+          borderRadius: BorderRadius.circular(19),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              SvgPicture.asset(prefixIcon ?? '', height: 25),
+              SizedBox(width: 4),
+              Text(
+                label,
+                style: TextStyle(
+                  color: textColor,
+                  fontFamily: AppFonts.circularStd,
+                  fontSize: 16,
+                ),
               ),
-            ),
-            SizedBox(width: 5),
+              SizedBox(width: 5),
 
-            SvgPicture.asset(
-              suffexIcon ?? '',
-              height: 13,
-              colorFilter: ColorFilter.mode(textColor, BlendMode.srcIn),
-            ),
-          ],
+              SvgPicture.asset(
+                suffexIcon ?? '',
+                height: 13,
+                colorFilter: ColorFilter.mode(textColor, BlendMode.srcIn),
+              ),
+            ],
+          ),
         ),
       ),
     );
