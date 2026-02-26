@@ -16,6 +16,16 @@ class SearchFilter extends StatefulWidget {
 
 class _SearchFilterState extends State<SearchFilter> {
   final int cardCount = 6;
+  List<String> Sort = [
+    'Recommended',
+    'Newest',
+    'Lowest - Highest Price',
+    'Highest - Lowest Price',
+  ];
+  List<String> Gender = ['Men', 'Women', 'Kids'];
+  List<String> Deals = ['On sale', 'Free Shipping Eligible'];
+  List<String> Price = ['Min', 'Max'];
+  List<String> filterList = ['Deals', 'Price', 'Sort By', 'Gender'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +79,8 @@ class _SearchFilterState extends State<SearchFilter> {
                     Row(
                       children: [
                         filter(
+                          labelBottomSheet: 'Filter',
+                          dataList: filterList,
                           label: '2',
                           prefixIcon: AppAssets.filter,
                           textColor: Colors.white,
@@ -76,12 +88,16 @@ class _SearchFilterState extends State<SearchFilter> {
                         ),
                         SizedBox(width: 5),
                         filter(
+                          dataList: Deals,
+                          labelBottomSheet: 'Deals',
                           label: 'On Sale',
                           textColor: Colors.black,
                           backGroundColor: AppColors.inputBackgroundColor,
                         ),
                         SizedBox(width: 5),
                         filter(
+                          labelBottomSheet: 'Price',
+                          dataList: Price,
                           label: 'Price',
                           textColor: Colors.white,
                           backGroundColor: AppColors.primaryColor,
@@ -89,6 +105,8 @@ class _SearchFilterState extends State<SearchFilter> {
                         ),
                         SizedBox(width: 5),
                         filter(
+                          labelBottomSheet: 'Sort By',
+                          dataList: Sort,
                           label: 'Sort  by',
                           textColor: Colors.black,
                           backGroundColor: AppColors.inputBackgroundColor,
@@ -96,6 +114,8 @@ class _SearchFilterState extends State<SearchFilter> {
                         ),
                         SizedBox(width: 5),
                         filter(
+                          labelBottomSheet: 'Gender',
+                          dataList: Gender,
                           label: 'Men',
                           textColor: Colors.white,
                           backGroundColor: AppColors.primaryColor,
