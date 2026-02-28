@@ -80,7 +80,7 @@ class _ProductPageState extends State<ProductPage> {
                     SizedBox(width: 211),
                     Text("S"),
                     SizedBox(width: 29),
-                    Icon(Icons.keyboard_arrow_down),
+                    SvgPicture.asset(AppAssets.arrowDown),
                   ],
                 ),
               ),
@@ -110,7 +110,7 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                     ),
                     SizedBox(width: 29),
-                    Icon(Icons.keyboard_arrow_down),
+                    SvgPicture.asset(AppAssets.arrowDown),
                   ],
                 ),
               ),
@@ -137,9 +137,9 @@ class _ProductPageState extends State<ProductPage> {
                         color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Icon(
-                        Icons.add,
-                        color: AppColors.inputBackgroundColor,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SvgPicture.asset(AppAssets.add),
                       ),
                     ),
 
@@ -153,9 +153,9 @@ class _ProductPageState extends State<ProductPage> {
                         color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Icon(
-                        Icons.remove,
-                        color: AppColors.inputBackgroundColor,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: SvgPicture.asset(AppAssets.remove),
                       ),
                     ),
                   ],
