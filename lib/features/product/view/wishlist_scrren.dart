@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/category/widgets/back_leading.dart';
 
 class WishlistScrren extends StatelessWidget {
   const WishlistScrren({super.key});
@@ -8,6 +9,7 @@ class WishlistScrren extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backLeading(),
         centerTitle: true,
         title: Text(
           "Wishlist (12)",
