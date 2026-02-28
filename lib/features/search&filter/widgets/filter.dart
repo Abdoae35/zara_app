@@ -99,7 +99,7 @@ class _filterState extends State<filter> {
                                     final isSelected = selectedIndex == index;
                                     return GestureDetector(
                                       onTap: () {
-                                        setState(() {
+                                        setModalState(() {
                                           selectedIndex = index;
                                         });
                                       },
@@ -110,7 +110,7 @@ class _filterState extends State<filter> {
                                           ),
                                           color: isSelected
                                               ? AppColors.primaryColor
-                                              : Color(0xffF4F4F4),
+                                              : AppColors.inputBackgroundColor,
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(
