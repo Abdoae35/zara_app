@@ -4,6 +4,7 @@ import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
+import 'package:zara_app/features/product/widget/infocontainer.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -22,15 +23,43 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 8, 24, 16),
+          child: SizedBox(
+            width: double.infinity,
+            height: 52,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Text("\$148", style: TextStyle(color: Colors.white)),
+                  SizedBox(width: 200),
+                  Text("Add to Bag", style: TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 61),
+            const SizedBox(height: 61),
+
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  backLeading(),
+                  containricons(iconPath: AppAssets.arrowleft),
                   SizedBox(width: 262),
                   containricons(iconPath: AppAssets.heart),
                 ],
@@ -39,23 +68,23 @@ class _ProductPageState extends State<ProductPage> {
 
             SizedBox(
               height: 248,
-
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: image.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsetsGeometry.fromLTRB(24, 24, 0, 0),
-
+                    padding: const EdgeInsets.fromLTRB(24, 24, 0, 0),
                     child: Image.asset(image[index], fit: BoxFit.cover),
                   );
                 },
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
-                children: [
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
                   Row(children: [Text("Men's Harrington Jacket")]),
                   SizedBox(height: 15),
                   Row(children: [Text("\$148")]),
@@ -63,7 +92,7 @@ class _ProductPageState extends State<ProductPage> {
               ),
             ),
 
-            SizedBox(height: 9),
+            const SizedBox(height: 9),
 
             Padding(
               padding: const EdgeInsetsGeometry.fromLTRB(24, 0, 24, 0),
@@ -81,7 +110,7 @@ class _ProductPageState extends State<ProductPage> {
                     SizedBox(width: 211),
                     Text("S"),
                     SizedBox(width: 29),
-                    SvgPicture.asset(AppAssets.arrowDown),
+                    Icon(Icons.keyboard_arrow_down),
                   ],
                 ),
               ),
@@ -111,7 +140,7 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                     ),
                     SizedBox(width: 29),
-                    SvgPicture.asset(AppAssets.arrowDown),
+                    Icon(Icons.keyboard_arrow_down),
                   ],
                 ),
               ),
@@ -138,9 +167,9 @@ class _ProductPageState extends State<ProductPage> {
                         color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SvgPicture.asset(AppAssets.add),
+                      child: Icon(
+                        Icons.add,
+                        color: AppColors.inputBackgroundColor,
                       ),
                     ),
 
@@ -154,9 +183,9 @@ class _ProductPageState extends State<ProductPage> {
                         color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: SvgPicture.asset(AppAssets.remove),
+                      child: Icon(
+                        Icons.remove,
+                        color: AppColors.inputBackgroundColor,
                       ),
                     ),
                   ],
@@ -165,106 +194,64 @@ class _ProductPageState extends State<ProductPage> {
             ),
 
             Padding(
-              padding: const EdgeInsetsGeometry.fromLTRB(24, 26, 24, 75),
+              padding: const EdgeInsets.fromLTRB(24, 26, 24, 75),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Built for life and made to last, this full-zip corduroy jacket is",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+                  const Text(
+                    "Built for life and made to last, this full-zip corduroy jacket is",
+                    style: TextStyle(fontSize: 12),
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        "part of our Nike Life collection. The spacious fit gives you ",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+                  const Text(
+                    "part of our Nike Life collection. The spacious fit gives you",
+                    style: TextStyle(fontSize: 12),
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        "plenty of room to layer underneath, while the soft corduroy",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+                  const Text(
+                    "plenty of room to layer underneath, while the soft corduroy",
+                    style: TextStyle(fontSize: 12),
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        "keeps it casual and timeless.",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+                  const Text(
+                    "keeps it casual and timeless.",
+                    style: TextStyle(fontSize: 12),
                   ),
 
-                  SizedBox(height: 24),
-                  Column(
-                    children: [
-                      Row(children: [Text("Shipping & Returns")]),
-                      SizedBox(height: 12),
-                      Row(
-                        children: [
-                          Text(
-                            "Free standard shipping and free 60-day returns",
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 24),
-                      Row(children: [Text("Reviews")]),
-                    ],
-                  ),
-                  SizedBox(height: 12),
-                  Row(children: [Text("4.5 Ratings")]),
-                  SizedBox(height: 12),
-                  Row(children: [Text("213 Reviews")]),
-                  SizedBox(height: 16),
-                  RatingContainar(image: "assets/images/Ellipse 15.png"),
-                  SizedBox(height: 12),
-                  RatingContainar(image: "assets/images/Ellipse 15 (1).png"),
-                  SizedBox(height: 75),
+                  const SizedBox(height: 24),
+                  const Text("Shipping & Returns"),
+                  const SizedBox(height: 12),
+                  const Text("Free standard shipping and free 60-day returns"),
+                  const SizedBox(height: 24),
+                  const Text("Reviews"),
+                  const SizedBox(height: 12),
+                  const Text("4.5 Ratings"),
+                  const SizedBox(height: 12),
+                  const Text("213 Reviews"),
+                  const SizedBox(height: 16),
 
-                  SizedBox(
-                    width: double.infinity,
-                    height: 52,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primaryColor,
-                      ),
-                      child: Row(
-                        children: [
-                          Text("\$148", style: TextStyle(color: Colors.white)),
-                          SizedBox(width: 181),
-                          Text(
-                            "Add to Bag",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
+                  const RatingContainar(image: "assets/images/Ellipse 15.png"),
+                  const SizedBox(height: 12),
+                  const RatingContainar(
+                    image: "assets/images/Ellipse 15 (1).png",
                   ),
+
+                  const SizedBox(height: 75),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _circleBtn(IconData icon) {
+    return Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        color: AppColors.primaryColor,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Icon(icon, color: AppColors.inputBackgroundColor),
     );
   }
 }
@@ -276,6 +263,7 @@ class RatingContainar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -287,23 +275,22 @@ class RatingContainar extends StatelessWidget {
               ),
               child: Image.asset(image),
             ),
-            SizedBox(width: 12),
-            Text("Alex Morgan"),
-
-            SizedBox(width: 100),
+            const SizedBox(width: 12),
+            const Text("Alex Morgan"),
+            const Spacer(),
             Icon(Icons.star, color: AppColors.primaryColor),
             Icon(Icons.star, color: AppColors.primaryColor),
             Icon(Icons.star, color: AppColors.primaryColor),
-            Icon(Icons.star, color: Color(0xffF4F4F4)),
-            Icon(Icons.star, color: Color(0xffF4F4F4)),
+            const Icon(Icons.star, color: Color(0xffF4F4F4)),
+            const Icon(Icons.star, color: Color(0xffF4F4F4)),
           ],
         ),
-        SizedBox(height: 4),
-        Text(
-          "Gucci transcribes its heritage, creativity, and innovation into a \nplenitude of collections. From staple items to distinctive \naccessories.",
+        const SizedBox(height: 4),
+        const Text(
+          "Gucci transcribes its heritage, creativity, and innovation into a plenitude of collections.",
         ),
-        SizedBox(height: 4),
-        Row(children: [Text("12days ago")]),
+        const SizedBox(height: 4),
+        const Text("12days ago"),
       ],
     );
   }
