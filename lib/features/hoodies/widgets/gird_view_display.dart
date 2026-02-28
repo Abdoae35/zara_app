@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zara_app/core/constants/app_assets.dart';
-import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/features/home/widgets/card_view.dart';
 
 class girdViewDisplay extends StatelessWidget {

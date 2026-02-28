@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
-import 'package:zara_app/features/category/widgets/category_icon.dart';
 import 'package:zara_app/features/category/widgets/category_item.dart';
-import 'package:zara_app/features/home/widgets/custom_title.dart';
 
 import 'package:zara_app/features/hoodies/page/hoodies_page.dart';
 
