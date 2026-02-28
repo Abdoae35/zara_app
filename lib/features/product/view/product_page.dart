@@ -59,9 +59,9 @@ class _ProductPageState extends State<ProductPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  containricons(icon: Icons.chevron_left),
+                  containricons(iconPath: AppAssets.arrowleft),
                   SizedBox(width: 262),
-                  containricons(icon: Icons.favorite_border),
+                  containricons(iconPath: AppAssets.heart),
                 ],
               ),
             ),

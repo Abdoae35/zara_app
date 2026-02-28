@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/home/pages/home_page.dart';
-import 'package:zara_app/features/notifications/notifications_page.dart';
 import 'package:zara_app/features/settingwidgt/profile_Screen.dart';
 
 class MainAppScreen extends StatefulWidget {
@@ -14,11 +13,11 @@ class MainAppScreen extends StatefulWidget {
 }
 
 class _MainAppScreenState extends State<MainAppScreen> {
-  int currentIndex =0;
+  int currentIndex = 0;
 
   List<Widget> screens = [
     HomePage(),
-     NotificationsPage(),
+    Center(child: Text('Notification')),
     Center(child: Text('Orders')),
     ProfileScreen(),
   ];
@@ -32,7 +31,6 @@ class _MainAppScreenState extends State<MainAppScreen> {
         padding: const EdgeInsets.only(top: 10),
         decoration: BoxDecoration(color: AppColors.backgroundColor),
         child: BottomNavigationBar(
-        
           currentIndex: currentIndex,
           backgroundColor: Colors.transparent,
           elevation: 0,
