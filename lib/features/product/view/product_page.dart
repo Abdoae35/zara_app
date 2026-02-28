@@ -59,7 +59,7 @@ class _ProductPageState extends State<ProductPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  containricons(iconPath: AppAssets.arrowleft),
+                  backLeading(),
                   SizedBox(width: 262),
                   containricons(iconPath: AppAssets.heart),
                 ],
@@ -110,7 +110,7 @@ class _ProductPageState extends State<ProductPage> {
                     SizedBox(width: 211),
                     Text("S"),
                     SizedBox(width: 29),
-                    Icon(Icons.keyboard_arrow_down),
+                    SvgPicture.asset(AppAssets.arrowDown, width: 20),
                   ],
                 ),
               ),
@@ -140,7 +140,7 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                     ),
                     SizedBox(width: 29),
-                    Icon(Icons.keyboard_arrow_down),
+                    SvgPicture.asset(AppAssets.arrowDown, width: 20),
                   ],
                 ),
               ),
