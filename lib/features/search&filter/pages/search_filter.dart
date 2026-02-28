@@ -10,6 +10,8 @@ import 'package:zara_app/features/hoodies/widgets/gird_view_display.dart';
 import 'package:zara_app/features/search&filter/widgets/filter.dart';
 
 class SearchFilter extends StatefulWidget {
+  const SearchFilter({super.key});
+
   @override
   State<SearchFilter> createState() => _SearchFilterState();
 }
