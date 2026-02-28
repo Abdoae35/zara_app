@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
+import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/features/home/widgets/card_view.dart';
+import 'package:zara_app/features/product/view/product_page.dart';
 
 class listViewSection extends StatelessWidget {
   const listViewSection({super.key});
@@ -15,10 +17,15 @@ class listViewSection extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 20,
           itemBuilder: (context, index) {
-            return cardView(
-              path: AppAssets.MensHarringtonJacket,
-              label: 'Men\'s Harrington Jacket',
-              price: '\$148.00',
+            return GestureDetector(
+              onTap: () {
+                pushTo(context, ProductPage());
+              },
+              child: cardView(
+                path: AppAssets.MensHarringtonJacket,
+                label: 'Men\'s Harrington Jacket',
+                price: '\$148.00',
+              ),
             );
           },
           separatorBuilder: (context, index) {

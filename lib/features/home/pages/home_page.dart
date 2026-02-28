@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
+import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/category/page/category_screen.dart';
 import 'package:zara_app/features/home/widgets/category_item.dart';
@@ -10,6 +11,7 @@ import 'package:zara_app/features/home/widgets/label_of_list_view.dart';
 import 'package:zara_app/features/home/widgets/list_view_section.dart';
 import 'package:zara_app/features/home/widgets/search_form.dart';
 import 'package:zara_app/features/home/widgets/see_all_text.dart';
+import 'package:zara_app/features/search&filter/pages/search_filter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -76,7 +78,12 @@ class HomePage extends StatelessWidget {
             // Search bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22),
-              child: searchForm(),
+              child: GestureDetector(
+                onTap: () {
+                  pushTo(context, SearchFilter());
+                },
+                child: Hero(tag: 'searchTag', child: searchForm()),
+              ),
             ),
 
             SizedBox(height: 20),
@@ -90,12 +97,7 @@ class HomePage extends StatelessWidget {
                   customTitle(label: 'Categories'),
                   seeAllText(
                     onPress: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CategoryScreen(),
-                        ),
-                      );
+                      pushTo(context, CategoryScreen());
                     },
                   ),
                 ],
@@ -124,7 +126,6 @@ class HomePage extends StatelessWidget {
             ),
 
             SizedBox(height: 24),
-
             // Top Selling section
             labelOfListView(label: 'Top Selling'),
             SizedBox(height: 16),

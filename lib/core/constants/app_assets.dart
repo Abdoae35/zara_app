@@ -47,4 +47,11 @@ class AppAssets {
   static const String bag = "assets/images/bag.png";
 
   static const String accessories = "assets/images/accessories.png";
+  static const String x = "assets/icons/x.svg";
+  static const String item1 = "assets/images/item1.png";
+  static const String item2 = "assets/images/item2.png";
+  static const String item3 = "assets/images/item3.png";
+  static const String item4 = "assets/images/item4.png";
+  static const String truee = "assets/icons/true.svg";
+  static const String bell = "assets/images/bell.png";
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
 import 'package:zara_app/features/product/widget/infocontainer.dart';
 
@@ -57,6 +60,7 @@ class _ProductPageState extends State<ProductPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   containricons(icon: Icons.chevron_left),
+                  SizedBox(width: 262),
                   containricons(icon: Icons.favorite_border),
                 ],
               ),
@@ -90,54 +94,104 @@ class _ProductPageState extends State<ProductPage> {
 
             const SizedBox(height: 9),
 
-            InfoContainer(context: context, child: Row(
-                children: const [
-                  SizedBox(width: 16),
-                  Text("Size"),
-                  Spacer(),
-                  Text("S"),
-                  SizedBox(width: 12),
-                  Icon(Icons.keyboard_arrow_down),
-                  SizedBox(width: 16),
-                ],
-              )),
+            Padding(
+              padding: const EdgeInsetsGeometry.fromLTRB(24, 0, 24, 0),
+              child: Container(
+                width: 342,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: AppColors.backgroundBlur,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 16),
+                    Text("Size"),
+                    SizedBox(width: 211),
+                    Text("S"),
+                    SizedBox(width: 29),
+                    Icon(Icons.keyboard_arrow_down),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
 
-            const SizedBox(height: 12),
-
-            InfoContainer(context: context, child: Row(
-                children: [
-                  const SizedBox(width: 16),
-                  const Text("Color"),
-                  const Spacer(),
-                  Container(
-                    width: 16,
-                    height: 16,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffB3B68B),
-                      borderRadius: BorderRadius.circular(30),
+            Padding(
+              padding: const EdgeInsetsGeometry.fromLTRB(24, 0, 24, 0),
+              child: Container(
+                width: 342,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: AppColors.backgroundBlur,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 16),
+                    Text("color"),
+                    SizedBox(width: 199),
+                    Container(
+                      width: 16,
+                      height: 16,
+                      decoration: BoxDecoration(
+                        color: Color(0xffB3B68B),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 12),
-                  const Icon(Icons.keyboard_arrow_down),
-                  const SizedBox(width: 16),
-                ],
-              )),
+                    SizedBox(width: 29),
+                    Icon(Icons.keyboard_arrow_down),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsetsGeometry.fromLTRB(24, 0, 24, 0),
+              child: Container(
+                width: 342,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: AppColors.backgroundBlur,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 16),
+                    Text("Quantity"),
+                    SizedBox(width: 105),
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(
+                        Icons.add,
+                        color: AppColors.inputBackgroundColor,
+                      ),
+                    ),
 
-            const SizedBox(height: 12),
-
-            InfoContainer(context: context, child: Row(
-                children: [
-                  const SizedBox(width: 16),
-                  const Text("Quantity"),
-                  const Spacer(),
-                  _circleBtn(Icons.add),
-                  const SizedBox(width: 23),
-                  const Text("1"),
-                  const SizedBox(width: 23),
-                  _circleBtn(Icons.remove),
-                  const SizedBox(width: 16),
-                ],
-              )),
+                    SizedBox(width: 23),
+                    Text("1"),
+                    SizedBox(width: 23),
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(
+                        Icons.remove,
+                        color: AppColors.inputBackgroundColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
 
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 26, 24, 75),
