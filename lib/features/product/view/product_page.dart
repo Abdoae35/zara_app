@@ -155,7 +155,7 @@ class _ProductPageState extends State<ProductPage> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: SvgPicture.asset(AppAssets.remove),
                       ),
                     ),
