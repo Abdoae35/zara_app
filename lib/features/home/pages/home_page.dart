@@ -11,6 +11,7 @@ import 'package:zara_app/features/home/widgets/label_of_list_view.dart';
 import 'package:zara_app/features/home/widgets/list_view_section.dart';
 import 'package:zara_app/features/home/widgets/search_form.dart';
 import 'package:zara_app/features/home/widgets/see_all_text.dart';
+import 'package:zara_app/features/hoodies/page/hoodies_page.dart';
 import 'package:zara_app/features/search&filter/pages/search_filter.dart';
 
 class HomePage extends StatelessWidget {
@@ -113,7 +114,13 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 14),
                 children: [
-                  CategoryItem(name: 'Hoodies', imagePath: AppAssets.hoodies),
+                  CategoryItem(
+                    onTap: () {
+                      pushTo(context, HoodiesPage());
+                    },
+                    name: 'Hoodies',
+                    imagePath: AppAssets.hoodies,
+                  ),
                   CategoryItem(name: 'Shorts', imagePath: AppAssets.shortss),
                   CategoryItem(name: 'Shoes', imagePath: AppAssets.shoes),
                   CategoryItem(name: 'Bag', imagePath: AppAssets.bag),

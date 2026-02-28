@@ -30,7 +30,6 @@ class filter extends StatefulWidget {
 
 class _filterState extends State<filter> {
   int selectedIndex = -1;
-
   bool isSeleted = false;
 
   @override
@@ -100,7 +99,7 @@ class _filterState extends State<filter> {
                                     final isSelected = selectedIndex == index;
                                     return GestureDetector(
                                       onTap: () {
-                                        setModalState(() {
+                                        setState(() {
                                           selectedIndex = index;
                                         });
                                       },
