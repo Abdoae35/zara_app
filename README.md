@@ -9,7 +9,7 @@ A pixel-perfect, fully responsive **Zara e-commerce UI** built with Flutter, ins
 ##  Screenshots
 
 ###  Login & Onboarding
-<img src="screenshots/splash.png" width="200"/> <img src="screenshots/signin.png" width="200"/> <img src="screenshots/signup.png" width="200"/>
+<img src="screenshots/Splash.png" width="200"/> <img src="screenshots/Login.png" width="200"/> <img src="screenshots/createAccount.png" width="200"/>
 
 Sign In, Sign Up, Forgot Password, Email Verification, Tell Us About Yourself
 
