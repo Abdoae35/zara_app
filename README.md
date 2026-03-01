@@ -60,6 +60,8 @@ Notifications, orders list, order detail, shipment tracking
 <img src="screenshots/Settings.png" width="200"/> <img src="screenshots/Wishlist detail.png" width="200"/>
 
 Profile info, Wishlist, Help, Support, Sign Out
+
+
 ---
 
 ##  Features
