@@ -8,14 +8,45 @@ A pixel-perfect, fully responsive **Zara e-commerce UI** built with Flutter, ins
 
 ##  Screenshots
 
-| Login & Onboarding | Homepage | Product Page |
-|---|---|---|
-| Sign In, Sign Up, Forgot Password, Onboarding | Categories, Top Selling, New In | Product Detail, Color & Size Selection |
+###  Login & Onboarding
+<img src="screenshots/splash.png" width="200"/> <img src="screenshots/signin.png" width="200"/> <img src="screenshots/signup.png" width="200"/>
 
-| Cart & Checkout | Search & Filter | Orders & Tracking |
-|---|---|---|
-| Cart, Checkout Steps, Order Success | Search, Sort By, Gender, Size, Price | Orders List, Order Detail, Tracking |
+Sign In, Sign Up, Forgot Password, Email Verification, Tell Us About Yourself
 
+---
+
+###  Homepage
+<img src="screenshots/home1.png" width="200"/> <img src="screenshots/home2.png" width="200"/> <img src="screenshots/home3.png" width="200"/>
+
+Category browsing, Top Selling & New In sections, search bar with Hero animation
+
+---
+
+###  Product Page
+<img src="screenshots/product1.png" width="200"/> <img src="screenshots/product2.png" width="200"/>
+
+Product detail, color & size selectors, shipping info, reviews
+
+---
+
+###  Cart & Checkout
+<img src="screenshots/cart.png" width="200"/> <img src="screenshots/checkout1.png" width="200"/> <img src="screenshots/order_success.png" width="200"/>
+
+Add to cart, multi-step checkout, order placed success screen
+
+---
+
+###  Search & Filter
+<img src="screenshots/search.png" width="200"/> <img src="screenshots/filter.png" width="200"/>
+
+Live search, filter by Sort, Gender, Size, Price
+
+---
+
+###  Notifications & Orders
+<img src="screenshots/notifications.png" width="200"/> <img src="screenshots/orders.png" width="200"/> <img src="screenshots/tracking.png" width="200"/>
+
+Notifications, orders list, order detail, shipment tracking
 ---
 
 ##  Features
