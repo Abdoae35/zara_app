@@ -26,6 +26,8 @@ Category browsing, Top Selling & New In sections, search bar with Hero animation
 
 ###  Product Page
 <img src="screenshots/Product Page.png" width="200"/> <img src="screenshots/Product Page (1).png" width="200"/>
+<img src="screenshots/Product Page (2).png" width="200"/>
+<img src="screenshots/Product Page (3).png" width="200"/>
 
 Product detail, color & size selectors, shipping info, reviews
 
@@ -40,6 +42,8 @@ Add to cart, multi-step checkout, order placed success screen
 
 ###  Search & Filter
 <img src="screenshots/Search Result.png" width="200"/> <img src="screenshots/Search Result (1).png" width="200"/>
+<img src="screenshots/Search Result (2).png" width="200"/>
+<img src="screenshots/Search Result (3).png" width="200"/>
 
 Live search, filter by Sort, Gender, Size, Price
 
