@@ -17,7 +17,7 @@ class SearchFilter extends StatefulWidget {
 }
 
 class _SearchFilterState extends State<SearchFilter> {
-  final int cardCount = 6;
+  final int cardCount = 5;
   List<String> Sort = [
     'Recommended',
     'Newest',
@@ -149,12 +149,12 @@ class _SearchFilterState extends State<SearchFilter> {
                 girdViewDisplay(
                   cardCount: cardCount,
                   cardList: [
-                    // Card 1
-                    cardView(
-                      path: AppAssets.item1,
-                      label: 'Men\'s Fleece Pullover Hoodie',
-                      price: '\$100.00',
-                    ),
+                    // // Card 1
+                    // cardView(
+                    //   path: AppAssets.item1,
+                    //   label: 'Men\'s Fleece Pullover Hoodie',
+                    //   price: '\$100.00',
+                    // ),
 
                     // Card 2
                     cardView(
