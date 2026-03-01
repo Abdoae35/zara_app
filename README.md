@@ -53,6 +53,13 @@ Live search, filter by Sort, Gender, Size, Price
 <img src="screenshots/Notifications.png" width="200"/> <img src="screenshots/Orders.png" width="200"/> <img src="screenshots/Track Order.png" width="200"/>
 
 Notifications, orders list, order detail, shipment tracking
+
+---
+
+###  Settings & Wishlist
+<img src="screenshots/Settings.png" width="200"/> <img src="screenshots/Wishlist detail.png" width="200"/>
+
+Profile info, Wishlist, Help, Support, Sign Out
 ---
 
 ##  Features
