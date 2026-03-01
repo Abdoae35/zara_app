@@ -10,41 +10,43 @@ A pixel-perfect, fully responsive **Zara e-commerce UI** built with Flutter, ins
 
 ###  Login & Onboarding
 <img src="screenshots/Splash.png" width="200"/> <img src="screenshots/Login.png" width="200"/> <img src="screenshots/createAccount.png" width="200"/>
+<img src="screenshots/Password Reset.png" width="200"/>
+<img src="screenshots/sendResetMail.png" width="200"/>
 
 Sign In, Sign Up, Forgot Password, Email Verification, Tell Us About Yourself
 
 ---
 
 ###  Homepage
-<img src="screenshots/home1.png" width="200"/> <img src="screenshots/home2.png" width="200"/> <img src="screenshots/home3.png" width="200"/>
+<img src="screenshots/HomePage.png" width="200"/> <img src="screenshots/Categories.png" width="200"/> <img src="screenshots/Categories (1).png" width="200"/>
 
 Category browsing, Top Selling & New In sections, search bar with Hero animation
 
 ---
 
 ###  Product Page
-<img src="screenshots/product1.png" width="200"/> <img src="screenshots/product2.png" width="200"/>
+<img src="screenshots/Product Page.png" width="200"/> <img src="screenshots/Product Page (1).png" width="200"/>
 
 Product detail, color & size selectors, shipping info, reviews
 
 ---
 
 ###  Cart & Checkout
-<img src="screenshots/cart.png" width="200"/> <img src="screenshots/checkout1.png" width="200"/> <img src="screenshots/order_success.png" width="200"/>
+<img src="screenshots/Cart.png" width="200"/> <img src="screenshots/Checkout.png" width="200"/> <img src="screenshots/Checkout (1).png" width="200"/>
 
 Add to cart, multi-step checkout, order placed success screen
 
 ---
 
 ###  Search & Filter
-<img src="screenshots/search.png" width="200"/> <img src="screenshots/filter.png" width="200"/>
+<img src="screenshots/Search Result.png" width="200"/> <img src="screenshots/Search Result (1).png" width="200"/>
 
 Live search, filter by Sort, Gender, Size, Price
 
 ---
 
 ###  Notifications & Orders
-<img src="screenshots/notifications.png" width="200"/> <img src="screenshots/orders.png" width="200"/> <img src="screenshots/tracking.png" width="200"/>
+<img src="screenshots/Notifications.png" width="200"/> <img src="screenshots/Orders.png" width="200"/> <img src="screenshots/Track Order.png" width="200"/>
 
 Notifications, orders list, order detail, shipment tracking
 ---
