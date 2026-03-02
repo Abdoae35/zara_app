@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/auth/pages/forget_pass.dart';
 import 'package:zara_app/features/main/main_app_screen.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MainApp extends StatelessWidget {
           child: child ?? SizedBox.shrink(),
         );
       },
-      home: MainAppScreen(),
+      home: ForgetPass(),
     );
   }
 }

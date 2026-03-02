@@ -9,7 +9,7 @@ class AppAssets {
   static const String cart = "assets/icons/bag2.svg";
   static const String checkOut = "assets/icons/check-out 1.svg";
   static const String discountShape = "assets/icons/discountshape.svg";
-  static const String email = "assets/icons/email.svg";
+ 
   static const String favIcon = "assets/icons/fav-icon.svg";
   static const String heart = "assets/icons/heart.svg";
   static const String home = "assets/icons/home.svg";
@@ -54,4 +54,5 @@ class AppAssets {
   static const String item4 = "assets/images/item4.png";
   static const String truee = "assets/icons/true.svg";
   static const String bell = "assets/images/bell.png";
+  static const String email = "assets/images/email.png";
 }

@@ -11,5 +11,5 @@ class AppColors {
   static const Color yellowColor = Color(0xffF4BD2F);
   static const Color lemonColor = Color(0xffB3B68B);
   static const Color backgroundBlur = Color(0xffF4F4F4);
-  static const Color blackDiscount = Color(0xff27272780);
+  static const Color blackDiscount = Color(0xff272727);
 }
