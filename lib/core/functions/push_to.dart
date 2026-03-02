@@ -6,3 +6,12 @@ Future<dynamic> pushTo(BuildContext context, Widget targetScreen) {
     MaterialPageRoute(builder: (context) => targetScreen),
   );
 }
+
+
+Future<dynamic> pushReplaceMent(BuildContext context, Widget targetScreen) {
+  return Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => targetScreen),
+  );
+}
+

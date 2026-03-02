@@ -30,7 +30,7 @@ class ForgetPass extends StatelessWidget {
             SizedBox(height: 24),
             ContinueButton(
               onPress: () {
-                pushTo(context, SendEmail());
+                pushReplaceMent(context, SendEmail());
               },
             ),
           ],

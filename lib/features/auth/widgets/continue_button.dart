@@ -3,12 +3,9 @@ import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 
 class ContinueButton extends StatelessWidget {
- final void Function()? onPress;
-  const ContinueButton({
-    
-    super.key,
-    this.onPress
-  });
+  final void Function()? onPress;
+  final String? label ;
+  const ContinueButton({super.key, this.onPress, this.label });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,7 @@ class ContinueButton extends StatelessWidget {
           backgroundColor: AppColors.primaryColor,
         ),
         child: Text(
-          'Continue',
+          label?? 'Continue',
           style: TextStyle(
             color: AppColors.backgroundColor,
             fontSize: 16,

@@ -33,7 +33,7 @@ class SendEmail extends StatelessWidget {
               height: 52,
               child: ElevatedButton(
                 onPressed: () {
-                  pushTo(context, AboutYourself());
+                  pushReplaceMent(context, AboutYourself());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primaryColor,
