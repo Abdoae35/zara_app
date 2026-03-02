@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
+import 'package:zara_app/core/functions/push_to.dart';
+import 'package:zara_app/features/auth/widgets/continue_button.dart';
+import 'package:zara_app/features/auth/widgets/custom_label_auth.dart';
 
 import 'zara_create_account_page.dart';
 import 'zara_sign_in_password_page.dart';
@@ -16,13 +19,7 @@ class ZaraSignInEmailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Sign in',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              CustomLabelAuth(data: 'Sign In'),
               const SizedBox(height: 24),
               TextField(
                 keyboardType: TextInputType.emailAddress,
@@ -39,29 +36,10 @@ class ZaraSignInEmailPage extends StatelessWidget {
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const ZaraSignInPasswordPage(),
-                      ),
-                    );
+                child: ContinueButton(
+                  onPress: () {
+                    pushTo(context, const ZaraSignInPasswordPage());
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF9B6BFF),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: const Text(
-                    'Continue',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -93,10 +71,7 @@ class ZaraSignInEmailPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        AppAssets.applePng,
-                        height: 20,
-                      ),
+                      Image.asset(AppAssets.applePng, height: 20),
                       const SizedBox(width: 12),
                       const Text('Continue With Apple'),
                     ],
@@ -117,10 +92,7 @@ class ZaraSignInEmailPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        AppAssets.googlePng,
-                        height: 20,
-                      ),
+                      Image.asset(AppAssets.googlePng, height: 20),
                       const SizedBox(width: 12),
                       const Text('Continue With Google'),
                     ],
@@ -141,10 +113,7 @@ class ZaraSignInEmailPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        AppAssets.facebookPng,
-                        height: 20,
-                      ),
+                      Image.asset(AppAssets.facebookPng, height: 20),
                       const SizedBox(width: 12),
                       const Text('Continue With Facebook'),
                     ],
@@ -158,4 +127,3 @@ class ZaraSignInEmailPage extends StatelessWidget {
     );
   }
 }
-

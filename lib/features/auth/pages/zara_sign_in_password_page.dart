@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:zara_app/core/functions/push_to.dart';
+import 'package:zara_app/features/auth/pages/forget_pass.dart';
+import 'package:zara_app/features/auth/widgets/continue_button.dart';
+import 'package:zara_app/features/auth/widgets/custom_label_auth.dart';
+import 'package:zara_app/features/main/main_app_screen.dart';
 
 class ZaraSignInPasswordPage extends StatelessWidget {
   const ZaraSignInPasswordPage({super.key});
@@ -12,13 +17,7 @@ class ZaraSignInPasswordPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Sign in',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              CustomLabelAuth(data: 'Sign In'),
               const SizedBox(height: 24),
               TextField(
                 obscureText: true,
@@ -35,28 +34,21 @@ class ZaraSignInPasswordPage extends StatelessWidget {
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF9B6BFF),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: const Text(
-                    'Continue',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
+                child: ContinueButton(
+                  onPress: () {
+                    pushReplaceMent(context, MainAppScreen());
+                  },
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'Forgot Password ? Reset',
-                style: TextStyle(fontSize: 14),
+              GestureDetector(
+                onTap: () {
+                  pushTo(context, ForgetPass());
+                },
+                child: const Text(
+                  'Forgot Password ? Reset',
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
             ],
           ),
@@ -65,4 +57,3 @@ class ZaraSignInPasswordPage extends StatelessWidget {
     );
   }
 }
-
