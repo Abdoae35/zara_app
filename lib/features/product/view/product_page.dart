@@ -125,7 +125,8 @@ class _ProductPageState extends State<ProductPage> {
               child: GestureDetector(
                 onTap: () async {
                   final size = await showModalBottomSheet<String>(
-                    context: context,
+                    backgroundColor: AppColors.backgroundColor,
+                    context: context, 
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(25),

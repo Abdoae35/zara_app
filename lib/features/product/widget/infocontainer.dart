@@ -23,6 +23,7 @@ class _InfoContainerState extends State<InfoContainer> {
       child: GestureDetector(
         onTap: () async {
           final selectedColor = await showModalBottomSheet<Color>(
+            backgroundColor: AppColors.backgroundColor,
             context: context,
             isScrollControlled: true,
             shape: const RoundedRectangleBorder(
