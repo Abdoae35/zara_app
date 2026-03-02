@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/core/styles/text_styles.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
-import 'package:zara_app/features/product/widget/infocontainer.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -84,10 +84,31 @@ class _ProductPageState extends State<ProductPage> {
               padding: const EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Row(children: [Text("Men's Harrington Jacket")]),
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Men's Harrington Jacket",
+                        style: TextStyles.body.copyWith(
+                          fontWeight: FontWeight.w700,
+                          fontFamily: AppFonts.gabarito,
+                        ),
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 15),
-                  Row(children: [Text("\$148")]),
+                  Row(
+                    children: [
+                      Text(
+                        "\$148",
+                        style: TextStyles.body.copyWith(
+                          fontWeight: FontWeight.w700,
+                          fontFamily: AppFonts.gabarito,
+                          color: AppColors.primaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -106,9 +127,21 @@ class _ProductPageState extends State<ProductPage> {
                 child: Row(
                   children: [
                     SizedBox(width: 16),
-                    Text("Size"),
+                    Text(
+                      "Size",
+                      style: TextStyles.body.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontFamily: AppFonts.circularStd,
+                      ),
+                    ),
                     SizedBox(width: 211),
-                    Text("S"),
+                    Text(
+                      "S",
+                      style: TextStyles.body.copyWith(
+                        fontWeight: FontWeight.w700,
+                        fontFamily: AppFonts.gabarito,
+                      ),
+                    ),
                     SizedBox(width: 29),
                     SvgPicture.asset(AppAssets.arrowDown, width: 20),
                   ],
@@ -129,7 +162,13 @@ class _ProductPageState extends State<ProductPage> {
                 child: Row(
                   children: [
                     SizedBox(width: 16),
-                    Text("color"),
+                    Text(
+                      "color",
+                      style: TextStyles.body.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontFamily: AppFonts.circularStd,
+                      ),
+                    ),
                     SizedBox(width: 199),
                     Container(
                       width: 16,
@@ -158,7 +197,13 @@ class _ProductPageState extends State<ProductPage> {
                 child: Row(
                   children: [
                     SizedBox(width: 16),
-                    Text("Quantity"),
+                    Text(
+                      "Quantity",
+                      style: TextStyles.body.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontFamily: AppFonts.circularStd,
+                      ),
+                    ),
                     SizedBox(width: 105),
                     Container(
                       width: 40,
@@ -174,7 +219,13 @@ class _ProductPageState extends State<ProductPage> {
                     ),
 
                     SizedBox(width: 23),
-                    Text("1"),
+                    Text(
+                      "1",
+                      style: TextStyles.body.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontFamily: AppFonts.circularStd,
+                      ),
+                    ),
                     SizedBox(width: 23),
                     Container(
                       width: 40,
@@ -198,33 +249,81 @@ class _ProductPageState extends State<ProductPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "Built for life and made to last, this full-zip corduroy jacket is",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyles.caption2.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontFamily: AppFonts.circularStd,
+                      color: AppColors.blackColor.withOpacity(0.5),
+                    ),
                   ),
-                  const Text(
+                  Text(
                     "part of our Nike Life collection. The spacious fit gives you",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyles.caption2.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontFamily: AppFonts.circularStd,
+                      color: AppColors.blackColor.withOpacity(0.5),
+                    ),
                   ),
-                  const Text(
+                  Text(
                     "plenty of room to layer underneath, while the soft corduroy",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyles.caption2.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontFamily: AppFonts.circularStd,
+                      color: AppColors.blackColor.withOpacity(0.5),
+                    ),
                   ),
-                  const Text(
+                  Text(
                     "keeps it casual and timeless.",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyles.caption2.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontFamily: AppFonts.circularStd,
+                      color: AppColors.blackColor.withOpacity(0.5),
+                    ),
                   ),
 
                   const SizedBox(height: 24),
-                  const Text("Shipping & Returns"),
+                  Text(
+                    "Shipping & Returns",
+                    style: TextStyles.body.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: AppFonts.gabarito,
+                    ),
+                  ),
                   const SizedBox(height: 12),
-                  const Text("Free standard shipping and free 60-day returns"),
+                  Text(
+                    "Free standard shipping and free 60-day returns",
+                    style: TextStyles.caption2.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontFamily: AppFonts.circularStd,
+                      color: AppColors.blackColor.withOpacity(0.5),
+                    ),
+                  ),
                   const SizedBox(height: 24),
-                  const Text("Reviews"),
+                  Text(
+                    "Reviews",
+                    style: TextStyles.body.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: AppFonts.gabarito,
+                    ),
+                  ),
                   const SizedBox(height: 12),
-                  const Text("4.5 Ratings"),
+                  Text(
+                    "4.5 Ratings",
+                    style: TextStyles.headline.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: AppFonts.gabarito,
+                    ),
+                  ),
                   const SizedBox(height: 12),
-                  const Text("213 Reviews"),
+                  Text(
+                    "213 Reviews",
+                    style: TextStyles.caption2.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontFamily: AppFonts.circularStd,
+                      color: AppColors.blackColor.withOpacity(0.5),
+                    ),
+                  ),
                   const SizedBox(height: 16),
 
                   const RatingContainar(image: "assets/images/Ellipse 15.png"),
@@ -276,7 +375,13 @@ class RatingContainar extends StatelessWidget {
               child: Image.asset(image),
             ),
             const SizedBox(width: 12),
-            const Text("Alex Morgan"),
+            Text(
+              "Alex Morgan",
+              style: TextStyles.caption2.copyWith(
+                fontWeight: FontWeight.w700,
+                fontFamily: AppFonts.gabarito,
+              ),
+            ),
             const Spacer(),
             Icon(Icons.star, color: AppColors.primaryColor),
             Icon(Icons.star, color: AppColors.primaryColor),
@@ -286,11 +391,22 @@ class RatingContainar extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 4),
-        const Text(
-          "Gucci transcribes its heritage, creativity, and innovation into a plenitude of collections.",
+        Text(
+          "Gucci transcribes its heritage, creativity, and innovation into a plenitude of collections.From staple items to distinctive accessories.",
+          style: TextStyles.caption2.copyWith(
+            fontWeight: FontWeight.w500,
+            fontFamily: AppFonts.circularStd,
+            color: AppColors.blackColor.withOpacity(0.5),
+          ),
         ),
         const SizedBox(height: 4),
-        const Text("12days ago"),
+        Text(
+          "12days ago",
+          style: TextStyles.caption2.copyWith(
+            fontWeight: FontWeight.w500,
+            fontFamily: AppFonts.circularStd,
+          ),
+        ),
       ],
     );
   }

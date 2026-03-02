@@ -9,6 +9,8 @@ import 'package:zara_app/features/auth/widgets/custom_label_auth.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
 
 class ForgetPass extends StatelessWidget {
+  const ForgetPass({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
