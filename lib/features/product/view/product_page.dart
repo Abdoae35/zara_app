@@ -6,6 +6,7 @@ import 'package:zara_app/core/styles/text_styles.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
 import 'package:zara_app/features/product/widget/infocontainer.dart';
+import 'package:zara_app/features/product/widget/size_choose_screen.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -21,6 +22,8 @@ class _ProductPageState extends State<ProductPage> {
     "assets/images/44ba888cfb4ba715388632c08bcead8fe7d7cbb8.png",
   ];
   Color selectedColor = Colors.orange;
+  String selectedSize = "S";
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -118,35 +121,55 @@ class _ProductPageState extends State<ProductPage> {
             const SizedBox(height: 9),
 
             Padding(
-              padding: const EdgeInsetsGeometry.fromLTRB(24, 0, 24, 0),
-              child: Container(
-                width: 342,
-                height: 56,
-                decoration: BoxDecoration(
-                  color: AppColors.backgroundBlur,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(width: 16),
-                    Text(
-                      "Size",
-                      style: TextStyles.body.copyWith(
-                        fontWeight: FontWeight.w500,
-                        fontFamily: AppFonts.circularStd,
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+              child: GestureDetector(
+                onTap: () async {
+                  final size = await showModalBottomSheet<String>(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(25),
                       ),
                     ),
-                    SizedBox(width: 211),
-                    Text(
-                      "S",
-                      style: TextStyles.body.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontFamily: AppFonts.gabarito,
+                    builder: (context) => const SizeChooseSheet(),
+                  );
+
+                  if (size != null) {
+                    setState(() {
+                      selectedSize = size;
+                    });
+                  }
+                },
+                child: Container(
+                  width: 342,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    color: AppColors.backgroundBlur,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 16),
+                      Text(
+                        "Size",
+                        style: TextStyles.body.copyWith(
+                          fontWeight: FontWeight.w500,
+                          fontFamily: AppFonts.circularStd,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 29),
-                    SvgPicture.asset(AppAssets.arrowDown, width: 20),
-                  ],
+                      const Spacer(),
+                      Text(
+                        selectedSize, // 👈 ده المهم
+                        style: TextStyles.body.copyWith(
+                          fontWeight: FontWeight.w700,
+                          fontFamily: AppFonts.gabarito,
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      SvgPicture.asset(AppAssets.arrowDown, width: 20),
+                      const SizedBox(width: 16),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -155,7 +178,6 @@ class _ProductPageState extends State<ProductPage> {
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
               child: InfoContainer(
-                
                 onColorSelected: (color) {
                   setState(() {
                     selectedColor = color;
@@ -210,38 +232,54 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                     ),
                     SizedBox(width: 105),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryColor,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Icon(
-                        Icons.add,
-                        color: AppColors.inputBackgroundColor,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          quantity++;
+                        });
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: AppColors.primaryColor,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: AppColors.inputBackgroundColor,
+                        ),
                       ),
                     ),
 
                     SizedBox(width: 23),
                     Text(
-                      "1",
+                      quantity.toString(),
                       style: TextStyles.body.copyWith(
                         fontWeight: FontWeight.w500,
                         fontFamily: AppFonts.circularStd,
                       ),
                     ),
                     SizedBox(width: 23),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryColor,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Icon(
-                        Icons.remove,
-                        color: AppColors.inputBackgroundColor,
+                    GestureDetector(
+                      onTap: () {
+                        if (quantity > 1) {
+                          setState(() {
+                            quantity--;
+                          });
+                        }
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: AppColors.primaryColor,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Icon(
+                          Icons.remove,
+                          color: AppColors.inputBackgroundColor,
+                        ),
                       ),
                     ),
                   ],
