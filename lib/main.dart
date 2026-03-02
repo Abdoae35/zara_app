@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/auth/pages/zara_splash_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -28,14 +29,7 @@ class MainApp extends StatelessWidget {
           child: child ?? SizedBox.shrink(),
         );
       },
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            'Hello, Zara App!',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
+      home: ZaraSplashPage()
     );
   }
 }
