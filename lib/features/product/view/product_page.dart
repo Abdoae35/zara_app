@@ -5,6 +5,7 @@ import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/core/styles/text_styles.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/product/widget/icon_container.dart';
+import 'package:zara_app/features/product/widget/infocontainer.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -19,6 +20,7 @@ class _ProductPageState extends State<ProductPage> {
     "assets/images/Rectangle 10.png",
     "assets/images/44ba888cfb4ba715388632c08bcead8fe7d7cbb8.png",
   ];
+  Color selectedColor = Colors.orange;
 
   @override
   Widget build(BuildContext context) {
@@ -151,35 +153,38 @@ class _ProductPageState extends State<ProductPage> {
             SizedBox(height: 12),
 
             Padding(
-              padding: const EdgeInsetsGeometry.fromLTRB(24, 0, 24, 0),
-              child: Container(
-                width: 342,
-                height: 56,
-                decoration: BoxDecoration(
-                  color: AppColors.backgroundBlur,
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+              child: InfoContainer(
+                
+                onColorSelected: (color) {
+                  setState(() {
+                    selectedColor = color;
+                  });
+                },
                 child: Row(
                   children: [
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     Text(
-                      "color",
+                      "Color",
                       style: TextStyles.body.copyWith(
                         fontWeight: FontWeight.w500,
                         fontFamily: AppFonts.circularStd,
                       ),
                     ),
-                    SizedBox(width: 199),
+                    const Spacer(),
+
                     Container(
                       width: 16,
                       height: 16,
                       decoration: BoxDecoration(
-                        color: Color(0xffB3B68B),
-                        borderRadius: BorderRadius.circular(30),
+                        color: selectedColor,
+                        shape: BoxShape.circle,
                       ),
                     ),
-                    SizedBox(width: 29),
+
+                    const SizedBox(width: 16),
                     SvgPicture.asset(AppAssets.arrowDown, width: 20),
+                    const SizedBox(width: 16),
                   ],
                 ),
               ),
