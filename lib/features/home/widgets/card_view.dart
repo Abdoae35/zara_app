@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/home/data/item_data.dart';
 
 class cardView extends StatelessWidget {
   final String path;

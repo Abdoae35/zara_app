@@ -6,6 +6,8 @@ import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/auth/pages/about_yourself.dart';
 
 class SendEmail extends StatelessWidget {
+  const SendEmail({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
