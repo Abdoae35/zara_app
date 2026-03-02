@@ -55,4 +55,8 @@ class AppAssets {
   static const String truee = "assets/icons/true.svg";
   static const String bell = "assets/images/bell.png";
   static const String email = "assets/images/email.png";
+
+  static const String applePng = "assets/icons/apple.png";
+  static const String googlePng = "assets/icons/google.png";
+  static const String facebookPng = "assets/icons/facebook.png";
 }
