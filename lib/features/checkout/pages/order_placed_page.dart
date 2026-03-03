@@ -10,16 +10,17 @@ class OrderPlacedSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryColor, 
+      backgroundColor: AppColors.primaryColor,
       body: Column(
         children: [
+          SizedBox(height: 100),
           Expanded(
-            flex: 3,  
+            flex: 3,
             child: Center(
-              child: SvgPicture.asset(
-                AppAssets.successOrder, 
-                height: 250, 
-                fit: BoxFit.contain,
+              child: Image.asset(
+                AppAssets.successOrder,
+                width: 317.7930908203125,
+                height: 252,
               ),
             ),
           ),
@@ -31,9 +32,7 @@ class OrderPlacedSuccess extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
               decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(40), 
-                ),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
               ),
               child: Column(
                 children: [
@@ -52,10 +51,7 @@ class OrderPlacedSuccess extends StatelessWidget {
                   const Text(
                     "You will recieve an email confirmation",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   const Spacer(),
                   ElevatedButton(
@@ -79,7 +75,7 @@ class OrderPlacedSuccess extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10), 
+                  const SizedBox(height: 10),
                 ],
               ),
             ),

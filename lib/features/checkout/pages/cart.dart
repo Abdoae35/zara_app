@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/checkout/checkout_page.dart';
+import 'package:zara_app/features/category/widgets/back_leading.dart';
+import 'package:zara_app/features/checkout/pages/checkout_page.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -12,12 +13,10 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        leadingWidth: 80,
+        leading: backLeading(),
+        backgroundColor: AppColors.backgroundColor,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
-          onPressed: () => Navigator.pop(context),
-        ),
         title: const Text(
           "Cart",
           style: TextStyle(
@@ -47,7 +46,7 @@ class CartPage extends StatelessWidget {
                   "L",
                   "White",
                   52.00,
-                  AppAssets.MensTShirt,  
+                  AppAssets.MensTShirt,
                 ),
                 const SizedBox(height: 24),
                 _buildCouponField(),
@@ -61,7 +60,12 @@ class CartPage extends StatelessWidget {
   }
 
   Widget _buildCartItem(
-      String title, String size, String color, double price, String? imagePath) {
+    String title,
+    String size,
+    String color,
+    double price,
+    String? imagePath,
+  ) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
@@ -92,7 +96,10 @@ class CartPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -117,7 +124,10 @@ class CartPage extends StatelessWidget {
                   _buildQtyBtn(Icons.add),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text("1", style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: Text(
+                      "1",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                   _buildQtyBtn(Icons.remove),
                 ],
@@ -167,7 +177,11 @@ class CartPage extends StatelessWidget {
               color: AppColors.primaryColor,
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 12),
+            child: const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.white,
+              size: 12,
+            ),
           ),
         ],
       ),
@@ -200,7 +214,9 @@ class CartPage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primaryColor,
               minimumSize: const Size(double.infinity, 56),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(100),
+              ),
               elevation: 0,
             ),
             child: const Text(

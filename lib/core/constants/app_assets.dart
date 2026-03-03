@@ -9,7 +9,7 @@ class AppAssets {
   static const String cart = "assets/icons/bag2.svg";
   static const String checkOut = "assets/icons/check-out 1.svg";
   static const String discountShape = "assets/icons/discountshape.svg";
- 
+
   static const String favIcon = "assets/icons/fav-icon.svg";
   static const String heart = "assets/icons/heart.svg";
   static const String home = "assets/icons/home.svg";
@@ -20,7 +20,7 @@ class AppAssets {
   static const String order = "assets/icons/order.svg";
   static const String profile = "assets/icons/profile.svg";
   static const String remove = "assets/icons/remove.svg";
-  static const String successOrder = "assets/icons/successOrder.svg";
+  static const String successOrder = "assets/images/image 3.png";
   static const String successOrdaccessorieser = "assets/icons/successOrder.svg";
 
   static const String FleecePulloverSkateHoodie =

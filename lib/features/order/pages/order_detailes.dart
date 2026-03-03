@@ -2,12 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
+import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/order/track_order.dart';
+import 'package:zara_app/features/order/pages/track_order.dart';
 
-class OrdersScreen extends StatelessWidget {
+class OrdersScreen extends StatefulWidget {
   const OrdersScreen({super.key});
 
+  @override
+  State<OrdersScreen> createState() => _OrdersScreenState();
+}
+
+class _OrdersScreenState extends State<OrdersScreen> {
+  List<String> orderTypes = [
+    "Processing",
+    "Shipped",
+    "Delivered",
+    "Returned",
+    "Cancelled",
+  ];
+ 
+  int selectedIndex = 0;
+  int processingIndex = 0;
+  int shippedIndex = 1;
+  int deliveredIndex = 2;
+  int returnedIndex = 3;
+  int cancelledIndex = 4;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,11 +53,31 @@ class OrdersScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
               children: [
-                _buildFilterChip("Processing", true),
-                _buildFilterChip("Shipped", false),
-                _buildFilterChip("Delivered", false),
-                _buildFilterChip("Returned", false),
-                _buildFilterChip("Cancelled", false),
+                _buildFilterChip(
+                  orderTypes[processingIndex],
+                  processingIndex,
+                  selectedIndex,
+                ),
+                _buildFilterChip(
+                  orderTypes[shippedIndex],
+                  shippedIndex,
+                  selectedIndex,
+                ),
+                _buildFilterChip(
+                  orderTypes[deliveredIndex],
+                  deliveredIndex,
+                  selectedIndex,
+                ),
+                _buildFilterChip(
+                  orderTypes[returnedIndex],
+                  returnedIndex,
+                  selectedIndex,
+                ),
+                _buildFilterChip(
+                  orderTypes[cancelledIndex],
+                  cancelledIndex,
+                  selectedIndex,
+                ),
               ],
             ),
           ),
@@ -45,7 +85,7 @@ class OrdersScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16),
-              itemCount: 3,  
+              itemCount: 3,
               itemBuilder: (context, index) {
                 List<String> orderIds = ["456765", "454569", "454809"];
                 List<String> itemsCount = ["4 items", "2 items", "1 items"];
@@ -75,12 +115,7 @@ class OrdersScreen extends StatelessWidget {
                     ),
                     trailing: SvgPicture.asset(AppAssets.arrowright, width: 16),
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const TrackOrderScreen(),
-                        ),
-                      );
+                      pushTo(context, TrackOrderScreen());
                     },
                   ),
                 );
@@ -92,7 +127,8 @@ class OrdersScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFilterChip(String label, bool isSelected) {
+  Widget _buildFilterChip(String label, int index, int selectedIndex) {
+    bool isSelected = index == selectedIndex;
     return Container(
       margin: const EdgeInsets.only(right: 8),
       child: ChoiceChip(
@@ -106,7 +142,11 @@ class OrdersScreen extends StatelessWidget {
         ),
         backgroundColor: AppColors.inputBackgroundColor,
         shape: const StadiumBorder(side: BorderSide.none),
-        onSelected: (val) {},
+        onSelected: (val) {
+          setState(() {
+            this.selectedIndex = index;
+          });
+        },
       ),
     );
   }

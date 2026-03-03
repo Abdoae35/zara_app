@@ -3,7 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/order/order_detailes.dart'; 
+import 'package:zara_app/features/category/widgets/back_leading.dart';
+import 'package:zara_app/features/order/pages/order_detailes.dart';
 
 class EmptyOrderScreen extends StatelessWidget {
   const EmptyOrderScreen({super.key});
@@ -13,9 +14,10 @@ class EmptyOrderScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
+        leadingWidth: 80,
+        leading: backLeading(),
         backgroundColor: AppColors.backgroundColor,
         elevation: 0,
-        centerTitle: true,
         title: const Text(
           "Orders",
           style: TextStyle(
@@ -33,19 +35,11 @@ class EmptyOrderScreen extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-              
-                SvgPicture.asset(
-                  AppAssets.checkOut, 
-                  height: 100,
-                  width: 100,
-                ),
+                SvgPicture.asset(AppAssets.checkOut, height: 100, width: 100),
                 Positioned(
                   right: 10,
                   top: 10,
-                  child: SvgPicture.asset(
-                    AppAssets.truee,
-                    height: 35,
-                  ),
+                  child: SvgPicture.asset(AppAssets.truee, height: 35),
                 ),
               ],
             ),
@@ -60,17 +54,14 @@ class EmptyOrderScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            
-            
+
             const SizedBox(height: 32),
-            
+
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const OrdersScreen()
-                  ),
+                  MaterialPageRoute(builder: (context) => const OrdersScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(

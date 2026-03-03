@@ -5,7 +5,7 @@ import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/category/page/category_screen.dart';
-import 'package:zara_app/features/checkout/cart.dart';
+import 'package:zara_app/features/checkout/pages/cart.dart';
 import 'package:zara_app/features/home/widgets/category_item.dart';
 import 'package:zara_app/features/home/widgets/custom_title.dart';
 import 'package:zara_app/features/home/widgets/label_of_list_view.dart';

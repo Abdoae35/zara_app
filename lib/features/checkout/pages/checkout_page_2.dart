@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/checkout/order_placed_page.dart';
+import 'package:zara_app/features/category/widgets/back_leading.dart';
+import 'package:zara_app/features/checkout/pages/order_placed_page.dart';
 
 class CheckoutPage2 extends StatelessWidget {
   const CheckoutPage2({super.key});
@@ -10,19 +13,18 @@ class CheckoutPage2 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        leadingWidth: 80,
+        leading: backLeading(),
+        backgroundColor: AppColors.backgroundColor,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundColor: const Color(0xFFF4F4F4),
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 18),
-              onPressed: () => Navigator.pop(context),
-            ),
+        title: const Text(
+          "Checkout",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
         ),
-        title: const Text("Checkout", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16)),
         centerTitle: true,
       ),
       body: Padding(
@@ -30,16 +32,12 @@ class CheckoutPage2 extends StatelessWidget {
         child: Column(
           children: [
             _buildSelectionCard(
-              "Shipping Address", 
+              "Shipping Address",
               "2715 Ash Dr. San Jose, South Dakot...",
               null,
             ),
             const SizedBox(height: 16),
-            _buildSelectionCard(
-              "Payment Method", 
-              "**** 4187", 
-              Icons.circle,  
-            ),
+            _buildSelectionCard("Payment Method", "**** 4187", Icons.circle),
             const Spacer(),
             _buildPriceSummary(),
             const SizedBox(height: 32),
@@ -53,7 +51,10 @@ class CheckoutPage2 extends StatelessWidget {
   Widget _buildSelectionCard(String title, String subtitle, IconData? icon) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(color: const Color(0xFFF4F4F4), borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF4F4F4),
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -61,18 +62,24 @@ class CheckoutPage2 extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(color: Colors.grey, fontSize: 12)),
+                Text(
+                  title,
+                  style: const TextStyle(color: Colors.grey, fontSize: 12),
+                ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
                     if (icon != null) ...[
-                      const Icon(Icons.payment, size: 20, color: Colors.orange),     
+                      SvgPicture.asset(AppAssets.masterCard),
                       const SizedBox(width: 8),
                     ],
                     Expanded(
                       child: Text(
-                        subtitle, 
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                        subtitle,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -101,7 +108,10 @@ class CheckoutPage2 extends StatelessWidget {
   Widget _buildPlaceOrderButton(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderPlacedSuccess()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const OrderPlacedSuccess()),
+        );
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,
@@ -111,8 +121,18 @@ class CheckoutPage2 extends StatelessWidget {
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("\$208", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
-          Text("Place Order", style: TextStyle(color: Colors.white, fontSize: 16)),
+          Text(
+            "\$208",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          Text(
+            "Place Order",
+            style: TextStyle(color: Colors.white, fontSize: 16),
+          ),
         ],
       ),
     );
@@ -123,7 +143,11 @@ class _PriceRow extends StatelessWidget {
   final String label;
   final String value;
   final bool isBold;
-  const _PriceRow({required this.label, required this.value, this.isBold = false});
+  const _PriceRow({
+    required this.label,
+    required this.value,
+    this.isBold = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -132,8 +156,22 @@ class _PriceRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: TextStyle(color: isBold ? Colors.black : Colors.grey, fontSize: 15, fontWeight: isBold ? FontWeight.bold : FontWeight.normal)),
-          Text(value, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black)),
+          Text(
+            label,
+            style: TextStyle(
+              color: isBold ? Colors.black : Colors.grey,
+              fontSize: 15,
+              fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+            ),
+          ),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
         ],
       ),
     );
