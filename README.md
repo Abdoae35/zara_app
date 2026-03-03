@@ -161,6 +161,7 @@ UI Design created in **Figma**, following Zara's brand identity:
 
 ```
 assets/
+└── fonts/       # All Fonts used on App
 ├── icons/        # SVG icons (cart, arrow, heart, etc.)
 └── images/       # Product images, illustrations
 ```
