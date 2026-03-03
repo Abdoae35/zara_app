@@ -4,7 +4,7 @@ import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/home/pages/home_page.dart';
 import 'package:zara_app/features/notifications/notifications_page.dart';
- 
+
 import 'package:zara_app/features/order/pages/order_page.dart';
 
 import 'package:zara_app/features/settingwidgt/profile_Screen.dart';
@@ -21,11 +21,9 @@ class _MainAppScreenState extends State<MainAppScreen> {
 
   List<Widget> screens = [
     HomePage(),
-     NotificationsPage(),
-     EmptyOrderScreen(),
-   
-   NotificationsPage(),
-   
+    NotificationsPage(),
+    EmptyOrderScreen(),
+
     ProfileScreen(),
   ];
 
@@ -54,7 +52,6 @@ class _MainAppScreenState extends State<MainAppScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: SvgPicture.asset(
-               
                 AppAssets.home,
                 colorFilter: const ColorFilter.mode(
                   Colors.grey,
