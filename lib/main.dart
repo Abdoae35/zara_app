@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
-import 'package:zara_app/features/main/main_app_screen.dart';
+import 'package:zara_app/features/auth/pages/zara_splash_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -29,7 +29,7 @@ class MainApp extends StatelessWidget {
           child: child ?? SizedBox.shrink(),
         );
       },
-      home: MainAppScreen(),
+      home: ZaraSplashPage()
     );
   }
 }
