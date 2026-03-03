@@ -23,9 +23,9 @@ class _MainAppScreenState extends State<MainAppScreen> {
     HomePage(),
      NotificationsPage(),
      EmptyOrderScreen(),
-    Center(child: Text('Profile')),
+   
    NotificationsPage(),
-    Center(child: Text('Orders')),
+   
     ProfileScreen(),
   ];
 
