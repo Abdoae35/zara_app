@@ -5,6 +5,7 @@ import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/category/page/category_screen.dart';
+import 'package:zara_app/features/checkout/cart.dart';
 import 'package:zara_app/features/home/widgets/category_item.dart';
 import 'package:zara_app/features/home/widgets/custom_title.dart';
 import 'package:zara_app/features/home/widgets/label_of_list_view.dart';
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -44,7 +46,7 @@ class HomePage extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
+                const Text(
                   'Men',
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
@@ -62,10 +64,16 @@ class HomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24),
-            child: CircleAvatar(
-              radius: 22,
-              backgroundColor: AppColors.primaryColor,
-              child: SvgPicture.asset(AppAssets.cart, height: 24),
+            // --- التعديل هنا: ضفنا GestureDetector لفتح السلة ---
+            child: GestureDetector(
+              onTap: () {
+               pushTo(context, const CartPage());
+              },
+              child: CircleAvatar(
+                radius: 22,
+                backgroundColor: AppColors.primaryColor,
+                child: SvgPicture.asset(AppAssets.cart, height: 24),
+              ),
             ),
           ),
         ],
@@ -73,20 +81,20 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Search bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22),
               child: GestureDetector(
                 onTap: () {
-                  pushTo(context, SearchFilter());
+                  pushTo(context, const SearchFilter());
                 },
                 child: Hero(tag: 'searchTag', child: searchForm()),
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Categories header
             Padding(
@@ -97,14 +105,14 @@ class HomePage extends StatelessWidget {
                   customTitle(label: 'Categories'),
                   seeAllText(
                     onPress: () {
-                      pushTo(context, CategoryScreen());
+                      pushTo(context, const CategoryScreen());
                     },
                   ),
                 ],
               ),
             ),
 
-            SizedBox(height: 16.5),
+            const SizedBox(height: 16.5),
 
             // Categories
             SizedBox(
@@ -125,28 +133,28 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             // Top Selling section
             labelOfListView(label: 'Top Selling'),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             listViewSection(),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // New In section
             labelOfListView(
               label: 'New In',
-              style: TextStyle(
+              style: const TextStyle(
                 color: AppColors.primaryColor,
                 fontFamily: AppFonts.gabarito,
                 fontSize: 19,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             listViewSection(),
 
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
           ],
         ),
       ),

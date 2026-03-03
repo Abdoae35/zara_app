@@ -7,7 +7,7 @@ class NotificationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white70,
       appBar: AppBar(
         title: const Text("Notifications",
          style: TextStyle(fontWeight: FontWeight.w600 ),),
@@ -17,15 +17,12 @@ class NotificationsPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.notifications_none,
-              size: 90,
-              color: Colors.grey,
-            ),
+            Image.asset('assets/images/bell.png'),
             const SizedBox(height: 20),
-            const Text(
+            const Text(          
               "No Notifications yet",
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600, 
+              ),
             ),
             const SizedBox(height: 15),
             ElevatedButton(
@@ -33,7 +30,12 @@ class NotificationsPage extends StatelessWidget {
                 backgroundColor: AppColors.primaryColor,
               ),
               onPressed: () {},
-              child: const Text("Explore Categories"),
+              child: const Text("Explore Categories",
+             style: TextStyle(
+                color:Colors.white70,
+                fontWeight: FontWeight.w600,
+              ),
+              ),
             )
           ],
         ),
