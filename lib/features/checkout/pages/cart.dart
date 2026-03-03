@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
+import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
 import 'package:zara_app/features/category/widgets/back_leading.dart';
 import 'package:zara_app/features/checkout/pages/checkout_page.dart';
@@ -160,7 +162,7 @@ class CartPage extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Icon(Icons.local_offer_outlined, color: Colors.green, size: 22),
+          SvgPicture.asset(AppAssets.discountShape),
           const SizedBox(width: 12),
           const Expanded(
             child: TextField(
@@ -198,6 +200,7 @@ class CartPage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          
           _summaryRow("Subtotal", "\$200.00"),
           _summaryRow("Shipping Cost", "\$8.00"),
           _summaryRow("Tax", "\$0.00"),
@@ -206,10 +209,7 @@ class CartPage extends StatelessWidget {
           const SizedBox(height: 24),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const CheckoutPage()),
-              );
+              pushTo(context, CheckoutPage());
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primaryColor,

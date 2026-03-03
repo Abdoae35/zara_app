@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24),
-            // --- التعديل هنا: ضفنا GestureDetector لفتح السلة ---
+         
             child: GestureDetector(
               onTap: () {
                pushTo(context, const CartPage());

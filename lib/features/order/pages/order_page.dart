@@ -14,10 +14,6 @@ class EmptyOrderScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        leadingWidth: 80,
-        leading: backLeading(),
-        backgroundColor: AppColors.backgroundColor,
-        elevation: 0,
         title: const Text(
           "Orders",
           style: TextStyle(
