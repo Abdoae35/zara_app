@@ -17,6 +17,8 @@ class ZaraSignInPasswordPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 90),
+
               CustomLabelAuth(data: 'Sign In'),
               const SizedBox(height: 24),
               TextField(

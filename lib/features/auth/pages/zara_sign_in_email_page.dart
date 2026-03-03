@@ -19,6 +19,8 @@ class ZaraSignInEmailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 90),
+
               CustomLabelAuth(data: 'Sign In'),
               const SizedBox(height: 24),
               TextField(
@@ -57,7 +59,7 @@ class ZaraSignInEmailPage extends StatelessWidget {
                   style: TextStyle(fontSize: 14),
                 ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 80),
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
