@@ -36,7 +36,7 @@ class ZaraSignInPasswordPage extends StatelessWidget {
                 width: double.infinity,
                 child: ContinueButton(
                   onPress: () {
-                    pushReplaceMent(context, MainAppScreen());
+                    pushRemoveAll(context, MainAppScreen());
                   },
                 ),
               ),

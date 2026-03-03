@@ -122,7 +122,7 @@ class _AboutYourselfState extends State<AboutYourself> {
             child: ContinueButton(
               label: 'Finish',
               onPress: () {
-                pushReplaceMent(context, MainAppScreen());
+                pushRemoveAll(context, MainAppScreen());
               },
             ),
           ),

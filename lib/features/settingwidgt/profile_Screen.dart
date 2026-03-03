@@ -4,6 +4,7 @@ import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/functions/push_to.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/auth/pages/zara_sign_in_email_page.dart';
 import 'package:zara_app/features/product/view/wishlist_scrren.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -24,70 +25,68 @@ class ProfileScreen extends StatelessWidget {
                 child: Image.asset("assets/images/Ellipse 14.png"),
               ),
               SizedBox(height: 32),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: AppColors.backgroundBlur,
-                  ),
-                  width: 342,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: AppColors.backgroundBlur,
+                ),
+                width: 342,
 
-                  height: 96,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 13,
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 13),
-                        Row(
-                          children: [
-                            Text(
-                              "Gilbert Jones",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: AppFonts.gabarito,
-                              ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 13,
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 13),
+                      Row(
+                        children: [
+                          Text(
+                            "Gilbert Jones",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: AppFonts.gabarito,
                             ),
-                          ],
-                        ),
-                        SizedBox(height: 8),
-                        Row(
-                          children: [
-                            Text(
-                              "Glbertjones001@gmail.com",
-                              style: TextStyle(
-                                color: AppColors.blackColor.withOpacity(0.5),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: AppFonts.circularStd,
-                              ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Text(
+                            "Glbertjones001@gmail.com",
+                            style: TextStyle(
+                              color: AppColors.blackColor.withOpacity(0.5),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: AppFonts.circularStd,
                             ),
-                            Spacer(),
-                            Text(
-                              "Edit",
-                              style: TextStyle(color: AppColors.primaryColor),
+                          ),
+                          Spacer(),
+                          Text(
+                            "Edit",
+                            style: TextStyle(color: AppColors.primaryColor),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Text(
+                            "121-224-7890",
+                            style: TextStyle(
+                              color: AppColors.blackColor.withOpacity(0.5),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: AppFonts.circularStd,
                             ),
-                          ],
-                        ),
-                        SizedBox(height: 8),
-                        Row(
-                          children: [
-                            Text(
-                              "121-224-7890",
-                              style: TextStyle(
-                                color: AppColors.blackColor.withOpacity(0.5),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: AppFonts.circularStd,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 13),
+                    ],
                   ),
                 ),
               ),
@@ -128,7 +127,6 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   color: AppColors.backgroundBlur,
                 ),
-
                 width: 342,
                 height: 58,
                 child: Padding(
@@ -155,7 +153,6 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   color: AppColors.backgroundBlur,
                 ),
-
                 width: 342,
                 height: 58,
                 child: Padding(
@@ -176,14 +173,19 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 163),
-              Text(
-                "Sign Out",
-                style: TextStyle(
-                  color: AppColors.redColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: AppFonts.gabarito,
+              SizedBox(height: 140),
+              GestureDetector(
+                onTap: () {
+                  pushRemoveAll(context, ZaraSignInEmailPage());
+                },
+                child: Text(
+                  "Sign Out",
+                  style: TextStyle(
+                    color: AppColors.redColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: AppFonts.gabarito,
+                  ),
                 ),
               ),
             ],

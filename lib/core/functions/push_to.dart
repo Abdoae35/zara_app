@@ -15,3 +15,11 @@ Future<dynamic> pushReplaceMent(BuildContext context, Widget targetScreen) {
   );
 }
 
+Future<dynamic> pushRemoveAll(BuildContext context, Widget targetScreen) {
+ return Navigator.pushAndRemoveUntil(
+  context,
+  MaterialPageRoute(builder: (context) => targetScreen),
+  (route) => false, 
+);
+}
+
