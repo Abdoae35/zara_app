@@ -30,7 +30,6 @@ class filter extends StatefulWidget {
 
 class _filterState extends State<filter> {
   int selectedIndex = -1;
-
   bool isSeleted = false;
 
   @override
@@ -111,7 +110,7 @@ class _filterState extends State<filter> {
                                           ),
                                           color: isSelected
                                               ? AppColors.primaryColor
-                                              : Color(0xffF4F4F4),
+                                              : AppColors.inputBackgroundColor,
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(

@@ -3,17 +3,20 @@ import 'package:flutter_svg/svg.dart';
 import 'package:zara_app/core/constants/app_assets.dart';
 import 'package:zara_app/core/constants/app_fonts.dart';
 import 'package:zara_app/core/styles/app_colors.dart';
+import 'package:zara_app/features/home/data/item_data.dart';
 
 class cardView extends StatelessWidget {
   final String path;
   final String label;
   final String price;
+  final String? discount;
 
   const cardView({
     super.key,
     required this.label,
     required this.path,
     required this.price,
+    this.discount,
   });
 
   @override
@@ -29,7 +32,6 @@ class cardView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image with heart icon
             Stack(
               children: [
                 Center(child: Image.asset(path, fit: BoxFit.cover)),
@@ -43,10 +45,11 @@ class cardView extends StatelessWidget {
 
             SizedBox(height: 9),
 
-           
             Padding(
               padding: const EdgeInsets.only(left: 4),
               child: Text(
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 label,
                 style: TextStyle(
                   fontFamily: AppFonts.circularStd,
@@ -55,16 +58,33 @@ class cardView extends StatelessWidget {
               ),
             ),
 
-            Spacer(), 
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.only(left: 4, bottom: 4),
-              child: Text(
-                price,
-                style: TextStyle(
-                  fontFamily: AppFonts.gabarito,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                ),
+              padding: const EdgeInsets.only(left: 4, bottom: 8),
+              child: Row(
+                children: [
+                  Text(
+                    price,
+                    style: TextStyle(
+                      fontFamily: AppFonts.gabarito,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    discount ?? '',
+
+                    style: TextStyle(
+                      decoration: TextDecoration.lineThrough,
+                      decorationColor: AppColors.blackDiscount,
+                      fontFamily: AppFonts.gabarito,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.blackDiscount,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

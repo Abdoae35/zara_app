@@ -6,6 +6,7 @@ class CategoryItem extends StatelessWidget {
   final String name;
   final String imagePath;
   final bool isSelected;
+  final void Function()? onTap;
 
   const CategoryItem({
     super.key,
@@ -13,14 +14,13 @@ class CategoryItem extends StatelessWidget {
     required this.imagePath,
     this.isSelected = false,
     Action,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('Tapped $name');
-      },
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -43,7 +43,7 @@ class CategoryItem extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            
+
             Text(
               name,
               style: TextStyle(
